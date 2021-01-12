@@ -13,7 +13,7 @@ import {
 import { isObject, merge } from "../utils/utils";
 import { resourceType } from "./ResourceType";
 import { config } from "../config";
-
+const  epsgid = 3857;
 export class Map extends mapboxgl.Map {
   
   constructor(options) {
@@ -74,7 +74,7 @@ export class Map extends mapboxgl.Map {
    */
   addArcGISDynamicLayer(url, options) {
     let { layerid, layers } = options;
-    let tmpurl = `${url}/export?dpi=96&transparent=true&format=png8&bbox=&SRS=EPSG:3857&STYLES=${layers ||""}&WIDTH=256&HEIGHT=256&f=image&bbox={bbox-epsg-3857}`;
+    let tmpurl = `${url}/export?dpi=96&transparent=true&format=png8&bbox=&SRS=EPSG:${epsgid}&STYLES=${layers ||""}&WIDTH=256&HEIGHT=256&f=image&bbox={bbox-epsg-${epsgid}}`;
     this.addSource(layerid, {
       type: "raster",
       tiles: [tmpurl],
@@ -96,7 +96,7 @@ export class Map extends mapboxgl.Map {
   addWMSLayer(url, options) {
     let { layerid, layers } = options;
     let tmpurl = `${url}?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&FORMAT=image/png&TRANSPARENT=true&tiled=true&LAYERS=${layers ||
-      ""}&exceptions=application/vnd.ogc.se_inimage&tiles&WIDTH=256&HEIGHT=256&SRS=EPSG:3857&STYLES=&BBOX={bbox-epsg-3857}`;
+      ""}&exceptions=application/vnd.ogc.se_inimage&tiles&WIDTH=256&HEIGHT=256&SRS=EPSG:${epsgid}&STYLES=&BBOX={bbox-epsg-${epsgid}}`;
     // let resUrl = getTokenUrl(tmpurl);
     this.addSource(layerid, {
       type: "raster",
