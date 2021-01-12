@@ -15,6 +15,7 @@ import { resourceType } from "./ResourceType";
 import { config } from "../config";
 
 export class Map extends mapboxgl.Map {
+  
   constructor(options) {
     let { style, transformRequest } = options;
     // style 对象或 mapbox online地址
