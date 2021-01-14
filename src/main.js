@@ -1,5 +1,5 @@
 import '../node_modules/@cgcs2000/mapbox-gl/dist/mapbox-gl.css';
-  import mapboxgl from '@cgcs2000/mapbox-gl';
+ import mapboxgl from '@cgcs2000/mapbox-gl';
 import "./css/main.css";
 import { LogoControl } from "./controls/LogoControl";
 import { MeasureTool } from "./tools/measure";

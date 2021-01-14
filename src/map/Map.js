@@ -1,4 +1,4 @@
-import mapboxgl from "mapbox-gl";
+import mapboxgl from '@cgcs2000/mapbox-gl';
 import { saveFile } from "../utils/file";
 
 import {
@@ -13,7 +13,7 @@ import {
 import { isObject, merge } from "../utils/utils";
 import { resourceType } from "./ResourceType";
 import { config } from "../config";
-const  epsgid = 4490;
+const  epsgid = 4326;
 export class Map extends mapboxgl.Map {
   
   constructor(options) {

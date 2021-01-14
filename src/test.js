@@ -1,42 +1,9 @@
-let loginParams = {
-  password: "admin",
-  userName: "admin",
-};
-let loginUrl = "http://192.168.2.64/geocms/api/geoengine/appinfo/sso";
-let tokeUrl = "http://192.168.2.64/geocms/api/geoengine/appinfo/gettoken";
-
-let app_id = "ddbc794c-b452-4364-91e9-c8c8bde87cff";
-let app_secret = "a8077a635d290aed9d544a883f28fe9f";
-
-// 登陆
-fetch(loginUrl, {
-  method: "post",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify(loginParams),
-})
-  .then((result) => {
-    return result.json();
-  })
-  .then((result) => {
-    let accessToken = result.data.accessToken;
-    fetch(tokeUrl + `?app_id=${app_id}&app_secret=${app_secret}`, {
-      method: "get",
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-        "Content-Type": "application/json",
-      },
-    })
-      .then((result) => result.json())
-      .then((result) => {
-        let token = result.data.token;
-        console.log(token);
-      });
-  });
+ 
 cityfun.setConfig({
-  userName:loginParams. userName,
-  password: loginParams.password,
-  app_id: app_id,
-  app_secret: app_secret,
+  // userName:loginParams. userName,
+  // // password: loginParams.password,
+  // app_id: app_id,
+  // app_secret: app_secret,
   // mapboxToken:
   //   "pk.eyJ1IjoibGltemdpc2VyIiwiYSI6ImNqZXFvemJlcjB1bWYyd2x0eGxjeGdvcXIifQ.gSsj63R-2VZV7L7mpSw0Uw",
   // cfToken:
@@ -49,7 +16,7 @@ var map = new cityfun.Map({
   center: [120.70044254024515, 31.301339366724918],
   zoom: 12,
   pitch: 60,
-  style: "http://webres.cityfun.com.cn/szmap/szmap_dark/3857/map_dark.json",
+  style: "http://webres.cityfun.com.cn/csmap/csdp/map/map_4326.json",
 });
 
 map.on("load", function() {});
