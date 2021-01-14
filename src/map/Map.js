@@ -13,7 +13,7 @@ import {
 import { isObject, merge } from "../utils/utils";
 import { resourceType } from "./ResourceType";
 import { config } from "../config";
-const  epsgid = 3857;
+const  epsgid = 4490;
 export class Map extends mapboxgl.Map {
   
   constructor(options) {
@@ -118,7 +118,7 @@ export class Map extends mapboxgl.Map {
   addWMTSLayer(url, options) {
     let { layerid, layer } = options;
     let tmpurl = `${url}?SERVICE=WMTS&REQUEST=GetTile&layer=${layer ||
-      ""}&Version=1.0.0&TILEMATRIX=EPSG:900913:{z}&TILEMATRIXSET=EPSG:900913&format=image%2Fpng&TileCol={x}&TileRow={y}`;
+      ""}&Version=1.0.0&TILEMATRIX=EPSG:900913:{z}&TILEMATRIXSET=EPSG:${epsgid}&format=image%2Fpng&TileCol={x}&TileRow={y}`;
   //  let resUrl = getTokenUrl(tmpurl);
     this.addSource(layerid, {
       type: "raster",
