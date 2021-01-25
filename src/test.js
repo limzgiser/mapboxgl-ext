@@ -1,7 +1,8 @@
  
 cityfun.setConfig({
   cfToken:
-  "yAkqtubPdGtD61/l8DNLXhQrBCUcCeCQR9dzlyiMXHp3Qe9zsEtfy9k0YMAmXwOzx9p6BulJNYrLbejxUp6zYWpHhnKqZcgr3FjHGv8ybhHqLd4eWoGztA=="
+  "yAkqtubPdGtD61/l8DNLXhQrBCUcCeCQR9dzlyiMXHp3Qe9zsEtfy9k0YMAmXwOzx9p6BulJNYrLbejxUp6zYWpHhnKqZcgr3FjHGv8ybhHqLd4eWoGztA==",
+  EPSG:4490
 });
 
 var map = new cityfun.Map({
@@ -41,6 +42,7 @@ map.on("load", function() {
   //   .then((styleObj) => {
   //     map.addMapStyle(styleObj, {
   //       styleid: "special-id",
+    // isFlyTo:false,// 默认false
   //     });
   //   });
   //  wmts  http://map2.cityfun.com.cn/geoserver/gwc/service/wmts

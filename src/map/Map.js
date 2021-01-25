@@ -17,6 +17,9 @@ const  epsgid = 4326;
 export class Map extends mapboxgl.Map {
   
   constructor(options) {
+    if(config.EPSG){
+      epsgid = config.EPSG;
+    }
     let { style, transformRequest } = options;
     // style 对象或 mapbox online地址
     if (isObject(style) || isMapboxSevUrl(style)) {
