@@ -100,6 +100,9 @@ export function getTokenUrl(url) {
  * @param {*} url
  */
 export function getBaseMapTokenUrl(url) {
-  let { cfToken } = config;
-  return cfToken ? `${url}?token=${cfToken}&geosite=@cf` : url;
+  let { cfToken ,geosite} = config;
+  if(!geosite){
+    geosite = 'cf'
+  }
+  return cfToken ? `${url}?token=${cfToken}&geosite=${geosite}`: url;
 }
