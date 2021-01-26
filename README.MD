@@ -115,7 +115,11 @@ cityfun.setConfig({
 > 注意：创建地图对象时指定参数中，style必须是平台发布的矢量地图服务
 
 ```javascript
-var map = new cityfun.Map({
+cityfun.setConfig({
+        cfToken:
+          "yAkqtubPdGtD61/l8DNLXhQrBCUcCeCQR9dzlyiMXHp3Qe9zsEtfy9k0YMAmXwOzx9p6BulJNYrLbejxUp6zYWpHhnKqZcgr3FjHGv8ybhHqLd4eWoGztA==",
+      });
+         var map = new cityfun.Map({
   container: "container",
   center: [120.70044254024515, 31.301339366724918],
   zoom: 12,
@@ -170,7 +174,11 @@ map.on("load", function() {
           "your access token",
         EPSG: 3857,
       });
-      var map = new cityfun.Map({
+      cityfun.setConfig({
+        cfToken:
+          "yAkqtubPdGtD61/l8DNLXhQrBCUcCeCQR9dzlyiMXHp3Qe9zsEtfy9k0YMAmXwOzx9p6BulJNYrLbejxUp6zYWpHhnKqZcgr3FjHGv8ybhHqLd4eWoGztA==",
+      });
+         var map = new cityfun.Map({
         container: "container",
         center: [120.70044254024515, 31.301339366724918],
         zoom: 12,

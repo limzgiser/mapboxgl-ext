@@ -21,12 +21,16 @@
     <div id="map"></div>
     <script src="./libs/cityfun/cityfun.min.js"></script>
     <script>
-        var map = new cityfun.Map({
+        cityfun.setConfig({
+        cfToken:
+          "yAkqtubPdGtD61/l8DNLXhQrBCUcCeCQR9dzlyiMXHp3Qe9zsEtfy9k0YMAmXwOzx9p6BulJNYrLbejxUp6zYWpHhnKqZcgr3FjHGv8ybhHqLd4eWoGztA==",
+      });
+         var map = new cityfun.Map({
             container: 'map',
             center: [120.58018178199796, 31.299183908754387],
             zoom: 8,
             dragRotate: false, // 默认为true, 不设置为开启拖拽旋转
-            style: "http://webres.cityfun.com.cn/szmap/szmap_dark/3857/map_dark.json",
+            style: "http://192.168.2.76/geocms/v1/cf/rest/services/MapService/VT/c772577d-6200-4469-8147-35d8009ab728",
         });
     </script>
 </body>

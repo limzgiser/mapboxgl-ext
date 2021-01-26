@@ -4,7 +4,11 @@ cityfun.setConfig({
   EPSG: 3857,
 });
 
-var map = new cityfun.Map({
+cityfun.setConfig({
+        cfToken:
+          "yAkqtubPdGtD61/l8DNLXhQrBCUcCeCQR9dzlyiMXHp3Qe9zsEtfy9k0YMAmXwOzx9p6BulJNYrLbejxUp6zYWpHhnKqZcgr3FjHGv8ybhHqLd4eWoGztA==",
+      });
+         var map = new cityfun.Map({
   container: "map",
   center: [120.70044254024515, 31.301339366724918],
   zoom: 12,
