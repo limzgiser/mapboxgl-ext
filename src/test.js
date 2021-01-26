@@ -1,9 +1,4 @@
-cityfun.setConfig({
-  cfToken:
-    "your accessToken",
-  EPSG: 3857,
-  geosite:"@cf"
-});
+ 
 
 cityfun.setConfig({
   cfToken:
