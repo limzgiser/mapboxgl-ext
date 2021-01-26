@@ -13,7 +13,7 @@ import {
 import { isObject, merge } from "../utils/utils";
 import { resourceType } from "./ResourceType";
 import { config } from "../config";
-const  epsgid = 4326;
+let  epsgid = 4326;
 export class Map extends mapboxgl.Map {
   
   constructor(options) {
