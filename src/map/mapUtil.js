@@ -101,5 +101,8 @@ export function getTokenUrl(url) {
  */
 export function getBaseMapTokenUrl(url) {
   let { cfToken ,geosite} = config;
-  return cfToken ? `${url}?token=${cfToken}&geosite=@${geosite|'cf'}` : url;
+  if(!geosite){
+    geosite = 'cf'
+  }
+  return cfToken ? `${url}?token=${cfToken}&geosite=${geosite}`: url;
 }

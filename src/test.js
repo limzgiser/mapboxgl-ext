@@ -1,14 +1,15 @@
 cityfun.setConfig({
   cfToken:
-    "yAkqtubPdGtD61/l8DNLXhQrBCUcCeCQR9dzlyiMXHp3Qe9zsEtfy9k0YMAmXwOzx9p6BulJNYrLbejxUp6zYWpHhnKqZcgr3FjHGv8ybhHqLd4eWoGztA==",
+    "your accessToken",
   EPSG: 3857,
+  geosite:"@cf"
 });
 
 cityfun.setConfig({
-        cfToken:
-          "yAkqtubPdGtD61/l8DNLXhQrBCUcCeCQR9dzlyiMXHp3Qe9zsEtfy9k0YMAmXwOzx9p6BulJNYrLbejxUp6zYWpHhnKqZcgr3FjHGv8ybhHqLd4eWoGztA==",
-      });
-         var map = new cityfun.Map({
+  cfToken:
+    "yAkqtubPdGtD61/l8DNLXhQrBCUcCeCQR9dzlyiMXHp3Qe9zsEtfy9k0YMAmXwOzx9p6BulJNYrLbejxUp6zYWpHhnKqZcgr3FjHGv8ybhHqLd4eWoGztA==",
+});
+var map = new cityfun.Map({
   container: "map",
   center: [120.70044254024515, 31.301339366724918],
   zoom: 12,
@@ -18,19 +19,19 @@ cityfun.setConfig({
 });
 
 map.on("load", function() {
-  map.addArcGISDynamicLayer( "http://192.168.2.64/geocms/v1/cf/rest/services/MapService/ESRI/ac785b13-7b7f-4e7e-aad3-4ba67f053eb0",{
-      layerid: "esri-tile",
-    }
-  );
+  // map.addArcGISDynamicLayer( "http://192.168.2.64/geocms/v1/cf/rest/services/MapService/ESRI/ac785b13-7b7f-4e7e-aad3-4ba67f053eb0",{
+  //     layerid: "esri-tile",
+  //   }
+  // );
 });
 map.on("load", function() {
   // arcgis  dynamic
-  map.addArcGISDynamicLayer(
-    "http://192.168.2.76/geocms/v1/cf/rest/services/MapService/ESRI/ced7d6b9-2aca-48f9-89be-d0376ced9de7",
-    {
-      layerid: "esri-dynamic-layer",
-    }
-  );
+  // map.addArcGISDynamicLayer(
+  //   "http://192.168.2.76/geocms/v1/cf/rest/services/MapService/ESRI/ced7d6b9-2aca-48f9-89be-d0376ced9de7",
+  //   {
+  //     layerid: "esri-dynamic-layer",
+  //   }
+  // );
   // arcgis tile
   // map.addArcGISDynamicLayer( "http://192.168.2.64/geocms/v1/cf/rest/services/MapService/ESRI/ac785b13-7b7f-4e7e-aad3-4ba67f053eb0",{
   //     layerid: "esri-tile",
