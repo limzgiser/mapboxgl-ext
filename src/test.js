@@ -14,16 +14,10 @@ var map = new cityfun.Map({
 });
 
 map.on("load", function() {
-  map
-    .loadMapStyle(
-      "http://192.168.2.64/geocms/v1/cf/rest/services/MapService/VM/8c248ab6-616f-702d-a932-39f987c7d5ad"
-    )
-    .then((styleObj) => {
-      map.addMapStyle(styleObj, {
-        styleid: "special-id",
-        isFlyTo: false, // 默认false
-      });
-    });
+  map.addArcGISDynamicLayer( "http://192.168.2.64/geocms/v1/cf/rest/services/MapService/ESRI/ac785b13-7b7f-4e7e-aad3-4ba67f053eb0",{
+      layerid: "esri-tile",
+    }
+  );
 });
 map.on("load", function() {
   // arcgis  dynamic

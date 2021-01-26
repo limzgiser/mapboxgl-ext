@@ -193,9 +193,8 @@ map.on("load", function() {
 
 ```javascript
 map.on("load", function() {
-  map.addArcGISDynamicLayer(
-    "http://192.168.2.76/geocms/v1/cf/rest/services/MapService/ESRI/ced7d6b9-2aca-48f9-89be-d0376ced9de7",{
-      layerid: "esri-dynamic-layer",
+  map.addArcGISDynamicLayer( "http://192.168.2.64/geocms/v1/cf/rest/services/MapService/ESRI/ac785b13-7b7f-4e7e-aad3-4ba67f053eb0",{
+      layerid: "esri-tile",
     }
   );
 });
