@@ -202,12 +202,10 @@ map.on("load", function() {
 > 加载arcgis server 发布的瓦片服务
 
 ```javascript
-map.on("load", function() {
-  map.addArcGISDynamicLayer( "http://192.168.2.64/geocms/v1/cf/rest/services/MapService/ESRI/ac785b13-7b7f-4e7e-aad3-4ba67f053eb0",{
+  map.addArcGISTileLayer( "http://192.168.2.64/geocms/v1/cf/rest/services/MapService/ESRI/ff0a52e3-f9e0-4cc9-8034-5d170dfb4b9c",{
       layerid: "esri-tile",
     }
   );
-});
 ```
 
 ### ArcGIS 动态服务

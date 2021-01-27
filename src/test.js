@@ -20,6 +20,8 @@ map.on("load", function() {
   //     layerid: "esri-tile",
   //   }
   // );
+
+  new  cityfun.MeasureTool(map)
 });
 map.on("load", function() {
   // arcgis  dynamic
