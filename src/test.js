@@ -62,8 +62,8 @@ map.on("load", function() {
   //   layer: "SZ_BaseMap:SZ_BaseMap_10",
   // });
   // arcgis tile
-  // map.addArcGISTileLayer( "http://192.168.2.64/geocms/v1/cf/rest/services/MapService/ESRI/ff0a52e3-f9e0-4cc9-8034-5d170dfb4b9c",{
-  //     layerid: "esri-tile",
-  //   }
-  // );
+  map.addArcGISTileLayer( "http://192.168.2.64/geocms/v1/cf/rest/services/MapService/ESRI/ff0a52e3-f9e0-4cc9-8034-5d170dfb4b9c",{
+      layerid: "esri-tile",
+    }
+  );
 });
