@@ -2,7 +2,9 @@
 
 cityfun.setConfig({
   cfToken:
-    "yAkqtubPdGtD61/l8DNLXhQrBCUcCeCQR9dzlyiMXHp3Qe9zsEtfy9k0YMAmXwOzx9p6BulJNYrLbejxUp6zYWpHhnKqZcgr3FjHGv8ybhHqLd4eWoGztA==",
+    "0NnAk2ig0Da5%2B0%2Ba%2F3t3ovdblX2rzSVUGM6%2BUjZAdXAl3QOZLfrI7URZ7VTLHvdVLdbmQz9uXGax6qYagVx70KuFsECqebrCOmdzJvDdFUHqLd4eWoGztA%3D%3D",
+    EPSG:"4490",
+    geosite:'@hlw'
 });
 var map = new cityfun.Map({
   container: "map",
@@ -10,7 +12,7 @@ var map = new cityfun.Map({
   zoom: 12,
   pitch: 60,
   style:
-    "http://192.168.2.76/geocms/v1/cf/rest/services/MapService/VT/c772577d-6200-4469-8147-35d8009ab728",
+    "http://36.153.213.20/geocms/v1/cf/rest/services/MapService/VM/2db4282f-4b0e-4c47-b1c4-61ffa92651be",
 });
 
 map.on("load", function() {
