@@ -60,6 +60,7 @@ export class Map extends mapboxgl.Map {
       type: "raster",
       tiles: [tmpurl],
       tileSize: 256,
+      zoomOffset: -1,
     });
     this.addLayer({
       id: layerid,
@@ -81,6 +82,7 @@ export class Map extends mapboxgl.Map {
       type: "raster",
       tiles: [tmpurl],
       tileSize: 256,
+      zoomOffset: -1,
     });
     this.addLayer({
       id: layerid,
@@ -279,7 +281,7 @@ export class Map extends mapboxgl.Map {
    * @param {*} data
    * @param {*} options
    */
-  changeBaseMap(data, options) {
+  changeBachangeseMap(data, options) {
     let opt = Object.assign(options, {
       isBaseMap: true,
     });
