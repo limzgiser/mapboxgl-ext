@@ -215,6 +215,7 @@ map.on("load", function() {
   map.addArcGISDynamicLayer(
     "http://192.168.2.64/geocms/v1/cf/rest/services/MapService/ESRI/ac785b13-7b7f-4e7e-aad3-4ba67f053eb0",{
       layerid: "esri-tile",
+      layers:[1,2,3]
     }
   );
 });
