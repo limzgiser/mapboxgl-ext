@@ -13,11 +13,10 @@ import {
 import { isObject, merge } from "../utils/utils";
 import { resourceType } from "./ResourceType";
 import { config } from "../config";
-let  epsgid = 3857;
+let epsgid = 3857;
 export class Map extends mapboxgl.Map {
- 
   constructor(options) {
-    if(config.EPSG){
+    if (config.EPSG) {
       epsgid = config.EPSG;
     }
     let { style, transformRequest } = options;
@@ -29,7 +28,10 @@ export class Map extends mapboxgl.Map {
       // 拦截请求
       if (!transformRequest) {
         options.transformRequest = (url, resourceType) => {
-          if (resourceType.indexOf(resourceType) >= 0 && !isImageBase64Url(url)) {
+          if (
+            resourceType.indexOf(resourceType) >= 0 &&
+            !isImageBase64Url(url)
+          ) {
             return {
               url: getTokenUrl(url),
             };
@@ -76,9 +78,9 @@ export class Map extends mapboxgl.Map {
    */
   addArcGISDynamicLayer(url, options) {
     let { layerid, layers } = options;
-    let  tmplayers = '';
-    if(layers && layers.length){
-        tmplayers = layers.toString();
+    let tmplayers = "";
+    if (layers && layers.length) {
+      tmplayers = layers.toString();
     }
     let tmpurl = `${url}/export?dpi=96&transparent=true&format=png8&SRS=EPSG:${epsgid}&STYLES=&layers=show:${tmplayers}&WIDTH=256&HEIGHT=256&f=image&bbox={bbox-epsg-${epsgid}}`;
     this.addSource(layerid, {
@@ -125,7 +127,7 @@ export class Map extends mapboxgl.Map {
     let { layerid, layer } = options;
     let tmpurl = `${url}?SERVICE=WMTS&REQUEST=GetTile&layer=${layer ||
       ""}&Version=1.0.0&TILEMATRIX=EPSG:900913:{z}&TILEMATRIXSET=EPSG:900913&format=image%2Fpng&TileCol={x}&TileRow={y}`;
-  //  let resUrl = getTokenUrl(tmpurl);
+    //  let resUrl = getTokenUrl(tmpurl);
     this.addSource(layerid, {
       type: "raster",
       tiles: [tmpurl],
@@ -144,7 +146,7 @@ export class Map extends mapboxgl.Map {
    * @param {*} options
    */
   addMapStyle(styleJson, options) {
-    let { styleid, isBaseMap,isFlyTo } = options;
+    let { styleid, isBaseMap, isFlyTo } = options;
     if (typeof styleJson != "object") {
       throw new TypeError("addMapStyle需要传入对象类型参数");
     }
@@ -173,7 +175,7 @@ export class Map extends mapboxgl.Map {
         }
       }
     }
-    if(isFlyTo){
+    if (isFlyTo) {
       if (zoom) {
         this.setZoom(zoom);
       }
@@ -184,7 +186,6 @@ export class Map extends mapboxgl.Map {
         this.setCenter(center);
       }
     }
-  
   }
   /**
    * 获取style.json 对象
