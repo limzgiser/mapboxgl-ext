@@ -76,7 +76,11 @@ export class Map extends mapboxgl.Map {
    */
   addArcGISDynamicLayer(url, options) {
     let { layerid, layers } = options;
-    let tmpurl = `${url}/export?dpi=96&transparent=true&format=png8&SRS=EPSG:${epsgid}&STYLES=${layers ||""}&WIDTH=256&HEIGHT=256&f=image&bbox={bbox-epsg-${epsgid}}`;
+    let  tmplayers = '';
+    if(layers && layers.length){
+        tmplayers = layers.toString();
+    }
+    let tmpurl = `${url}/export?dpi=96&transparent=true&format=png8&SRS=EPSG:${epsgid}&STYLES=&layers=show:${tmplayers}&WIDTH=256&HEIGHT=256&f=image&bbox={bbox-epsg-${epsgid}}`;
     this.addSource(layerid, {
       type: "raster",
       tiles: [tmpurl],
