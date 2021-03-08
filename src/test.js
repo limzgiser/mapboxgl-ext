@@ -1,10 +1,8 @@
- 
-
 cityfun.setConfig({
   cfToken:
     "0NnAk2ig0Da5%2B0%2Ba%2F3t3ovdblX2rzSVUGM6%2BUjZAdXAl3QOZLfrI7URZ7VTLHvdVLdbmQz9uXGax6qYagVx70KuFsECqebrCOmdzJvDdFUHqLd4eWoGztA%3D%3D",
-    EPSG:"4490",
-    geosite:'@hlw'
+  EPSG: "4490",
+  geosite: "@hlw",
 });
 var map = new cityfun.Map({
   container: "map",
@@ -21,7 +19,7 @@ map.on("load", function() {
   //   }
   // );
 
-  new  cityfun.MeasureTool(map)
+  new cityfun.MeasureTool(map);
 });
 map.on("load", function() {
   // arcgis  dynamic
@@ -46,22 +44,25 @@ map.on("load", function() {
   // );
   // 专题图 http://webres.cityfun.com.cn/sip_std_zt/3857/jzgdfb.json
   // 矢量style
-  //   .loadMapStyle(
-  //     "http://192.168.2.64/geocms/v1/cf/rest/services/MapService/VM/8c248ab6-616f-702d-a932-39f987c7d5ad"
-  //   )
-  //   .then((styleObj) => {
-  //     map.addMapStyle(styleObj, {
-  //       styleid: "special-id",
-  // isFlyTo:false,// 默认false
-  //     });
-  //   });
+  map
+    .loadMapStyle(
+      "http://192.168.2.64/geocms/v1/cf/rest/services/MapService/VM/8c248ab6-616f-702d-a932-39f987c7d5ad"
+    )
+    .then((styleObj) => {
+      map.addMapStyle(styleObj, {
+        styleid: "special-id",
+        isFlyTo: false, // 默认false
+      });
+    });
   //  wmts  http://map2.cityfun.com.cn/geoserver/gwc/service/wmts
   // map.addWMTSLayer("http://192.168.2.64/geocms/v1/cf/rest/services/MapService/OGC/3abd92a4-0da8-48d4-9905-dac2c5e46caf", {
   //   layerid: "geo-server-wmts",
   //   layer: "SZ_BaseMap:SZ_BaseMap_10",
   // });
   // arcgis tile
-  map.addArcGISTileLayer( "http://192.168.2.64/geocms/v1/cf/rest/services/MapService/ESRI/ff0a52e3-f9e0-4cc9-8034-5d170dfb4b9c",{
+  map.addArcGISTileLayer(
+    "http://192.168.2.64/geocms/v1/cf/rest/services/MapService/ESRI/ff0a52e3-f9e0-4cc9-8034-5d170dfb4b9c",
+    {
       layerid: "esri-tile",
     }
   );
